@@ -11,17 +11,25 @@
   </head>
 
   <body>
-    <div>
-      <%= button_to(
-        "Log Out",
-        destroy_user_session_path,
-        method: :delete
-      )  if current_user %>
-    </div>
+    <nav class="navigation">
+      <div class="logo">
+        <img src="https://cdn-icons-png.flaticon.com/512/188/188926.png" alt="pikachu figure in a coin" />
+        PokeCoin
+      </div>
+      <div>
+        <%= button_to(
+          "Log Out",
+          destroy_user_session_path,
+          { method: :delete, class: "btn first" }
+        )  if current_user %>
+      </div>
+    </nav>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     
     <%= yield %>
+    <a href="https://www.flaticon.com/free-icons/pokemon" title="pokemon icons">Pokemon icons created by Roundicons Freebies - Flaticon</a>
   </body>
 </html>
+
