@@ -13,3 +13,383 @@
  *= require_tree .
  *= require_self
  */
+
+:root {
+  --buy: #24cc97;
+  --sell: #fa5e7a;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+html,
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #333;
+  font-family: "Roboto", sans-serif;
+}
+
+
+
+/* Navigation Bar */
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 80%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo img {
+  width: 5rem;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.container {
+  margin: auto;
+  width: 85vw;
+  margin: 10rem 0;
+}
+
+/*  Wallet */
+.balance-container {
+  display: flex;
+  flex: 1 1;
+  justify-content: space-around;
+  margin: auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 100%;
+}
+
+.wallet {
+  box-shadow: 2px 2px 4px var(--buy);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wallet-balance {
+  font-size: 3rem;
+}
+
+.wallet-balance-detail {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.wallet-deposit {
+  font-size: 1.5rem;
+}
+
+/* Button */
+.btn {
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6rem;
+  color: #e74c3c;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 0.5rem;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  -webkit-transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #fff;
+  outline: 0;
+  box-shadow: 0 0 40px 40px #e74c3c inset;
+}
+
+.btn-buy {
+  border: 2px solid var(--buy);
+  color: var(--buy);
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+.btn-buy:hover,
+.btn-buy:focus {
+  color: #000;
+  outline: 0;
+  box-shadow: 0 0 40px 40px var(--buy) inset;
+}
+
+.btn-sell {
+  border: 2px solid var(--sell);
+  color: var(--sell);
+  width: 100%;
+  margin: 10px 0 0 0;
+}
+
+.btn-sell:hover,
+.btn-sell:focus {
+  color: #000;
+  outline: 0;
+  box-shadow: 0 0 40px 40px var(--sell) inset;
+}
+
+/* BT Component */
+.trade-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  width: 100%;
+}
+
+.trade-container {
+  padding: 1rem;
+  border-radius: 1rem;
+  min-width: 45rem;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.26);
+}
+
+.buy-container {
+  box-shadow: 2px 2px 4px var(--buy);
+}
+
+.sell-container {
+  box-shadow: 2px 2px 4px var(--sell);
+}
+
+.list-container {
+  padding: 2rem;
+  min-height: 20rem;
+  height: 30rem;
+  overflow: scroll;
+  border-radius: 1rem;
+}
+
+/* LineChart */
+.chart-container {
+  margin: 5rem 0;
+}
+
+/* Transactions table */
+
+.operation-buy {
+  color: var(--buy);
+}
+
+.operation-sell {
+  color: var(--sell);
+}
+
+.trades-history-container {
+  height: 340px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+table {
+  border-collapse: collapse;
+  width: 40rem;
+}
+
+thead {
+  font-weight: 600;
+  width: 100%;
+}
+
+tbody {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #555;
+}
+
+tr:hover {
+  background-color: rgba(255, 165, 0, 0.1);
+}
+
+/* BT Component */
+.trade-section-title {
+  margin: 5rem 0 2rem 0;
+}
+
+.total-trade {
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  height: 60px;
+  justify-content: space-between;
+}
+.total-title {
+  font-size: 22px;
+  font-weight: 500;
+}
+.total-tokens {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-family: "Open Sans";
+  font-weight: 500;
+  line-height: 10px;
+}
+.total-amount {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+/* BTI Component */
+
+.item {
+  padding: 20px 30px;
+  height: 120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #444;
+  border-bottom: 1px solid #444;
+}
+
+.image {
+  object-fit: contain;
+  width: 5rem;
+  margin-right: 2rem;
+  margin-right: 50px;
+}
+
+.image img {
+  height: 100%;
+}
+
+.description {
+  padding-top: 10px;
+  margin-right: 60px;
+  width: 115px;
+}
+
+.description span {
+  display: block;
+  font-size: 14px;
+  color: #fafafa;
+  font-weight: 400;
+}
+
+.description span:first-child {
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.description span:last-child {
+  font-weight: 300;
+  margin-top: 8px;
+}
+
+.amount-control {
+  padding-top: 20px;
+}
+
+.minus-btn,
+.plus-btn {
+  width: 30px;
+  height: 30px;
+  margin: 0 1rem;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 1px solid #e1e8ee;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.minus-btn:hover {
+  background-color: var(--buy);
+  color: black;
+  border: none;
+}
+
+.plus-btn:hover {
+  background-color: var(--sell);
+  color: white;
+  border: none;
+}
+
+.total-price {
+  width: 83px;
+  padding-top: 27px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 300;
+}
+
+/* Devise */
+.actions input {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.field input {
+  color: #000;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.actions input:hover {
+  background-color: #45a049;
+}
+
+.actions, .field {
+  border-radius: 5px;
+  padding: 20px;
+}
