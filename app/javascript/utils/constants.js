@@ -1,4 +1,3 @@
-export const BASE_URL = process.env.BASE_URL;
 export const DASHBOARD_INDEX = "/dashboard";
 export const TRADE_BUY = "/trades/buy";
 export const TRADE_SELL = "/trades/sell";

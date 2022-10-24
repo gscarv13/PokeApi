@@ -1,8 +1,8 @@
-import { BASE_URL, DASHBOARD_INDEX, BTC_BASE_URL, BTC_HISTORY, BTC_INFO } from "./constants";
+import { DASHBOARD_INDEX, BTC_BASE_URL, BTC_HISTORY, BTC_INFO } from "./constants";
 
 export const httpGetDashboard = async () => {
   try {
-      const response = await fetch(BASE_URL + DASHBOARD_INDEX);
+      const response = await fetch(DASHBOARD_INDEX);
       return await response.json()
   }
   catch (error) {
@@ -21,7 +21,7 @@ export const httpPostTrade = async (body, endpoint) => {
   }
 
   try {
-    const response = await fetch(BASE_URL + endpoint, config);
+    const response = await fetch(endpoint, config);
     return await response.json()
   }
   catch (error) {
