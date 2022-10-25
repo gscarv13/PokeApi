@@ -12,7 +12,7 @@
 
 ## Live version
 
-You can check the live version in [this link](https://gscarv13-pokecoin.herokuapp.com/)
+You can check the live version in [this link](https://gscarv13-pokecoins.herokuapp.com/)
 
 ## Getting Started
 
